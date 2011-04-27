@@ -3,6 +3,12 @@ require 'test_helper'
 class ChoresControllerTest < ActionController::TestCase
   setup do
     @chore = chores(:one)
+    @update = {
+      :title        => 'Lorem Ipsum',
+      :description  => 'Wibbles are fun',
+      :image_url    => 'lorem.jpg',
+      :value        => 19.84
+    }
   end
 
   test "should get index" do
@@ -18,7 +24,7 @@ class ChoresControllerTest < ActionController::TestCase
 
   test "should create chore" do
     assert_difference('Chore.count') do
-      post :create, :chore => @chore.attributes
+      post :create, :chore => @update
     end
 
     assert_redirected_to chore_path(assigns(:chore))
@@ -35,7 +41,7 @@ class ChoresControllerTest < ActionController::TestCase
   end
 
   test "should update chore" do
-    put :update, :id => @chore.to_param, :chore => @chore.attributes
+    put :update, :id => @chore.to_param, :chore => @update
     assert_redirected_to chore_path(assigns(:chore))
   end
 
