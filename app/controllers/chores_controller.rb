@@ -3,7 +3,6 @@ class ChoresController < ApplicationController
   # GET /chores.xml
   def index
     @chores = Chore.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @chores }

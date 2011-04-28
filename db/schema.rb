@@ -10,13 +10,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110423124624) do
+ActiveRecord::Schema.define(:version => 20110427152556) do
+
+  create_table "children", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "chores", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "image_url"
     t.decimal  "value",       :precision => 8, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "completions", :force => true do |t|
+    t.integer  "child_id"
+    t.integer  "chore_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "kids", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "chore_id"
+    t.integer  "kid_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

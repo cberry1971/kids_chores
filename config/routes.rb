@@ -1,4 +1,6 @@
 KidsChores::Application.routes.draw do
+  resources :children
+
   resources :chores
 
   # The priority is based upon order of creation:
