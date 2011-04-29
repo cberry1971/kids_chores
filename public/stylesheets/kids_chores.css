@@ -1,16 +1,21 @@
 /* Global styles */
 
-#store #notice {
-        color: #000;
-        border: 2px solid red;
-        padding: 1em;
-        margin-bottom: 2em;
-        background-color: #f0f0f0;
-        font: bold smaller sans-serif;
+/* START:notice */
+#notice {
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+/* END:notice */
+
+
+#poster .entry form, #poster .entry form div {
+display: inline;
 }
 
-
-#store h1 {
+h1 {
         font:  150% sans-serif;
         color: #226;
         border-bottom: 3px dotted #77d;
@@ -18,95 +23,254 @@
 
 /* Styles for chores/index */
 
-#chore_list table {
+#chore-list table {
         border-collapse: collapse;
 }
 
-#chore_list table tr td {
+#chore-list table tr td {
         padding: 5px;
         vertical-align: top;
 }
 
-#chore_list .list_image {
+#chore-list .list-image {
   width:        60px;
   height:       70px;
 }
 
-#chore_list .list_description {
+#chore-list .list-description {
   width:        60%;
 }
 
-#chore_list .list_description dl {
+#chore-list .list-description dl {
         margin: 0;
 }
 
-#chore_list .list_description dt {
-	color:        #244;
-	font-weight:  bold;
-	font-size:    larger;
+#chore-list .list-description dt {
+        color:        #244;
+        font-weight:  bold;
+        font-size:    larger;
 }
 
-#chore_list .list_description dd {
+#chore-list .list-description dd {
         margin: 0;
 }
 
-#chore_list .list_actions {
+#chore-list .list-actions {
   font-size:    x-small;
   text-align:   right;
   padding-left: 1em;
 }
 
-#chore_list .list_line_even {
-  background:   #fffacd;
+#chore-list .list-line-even {
+  background:   #e0f8f8;
 }
 
-#chore_list .list_line_odd {
-  background:   #90ee90;
+#chore-list .list-line-odd {
+  background:   #f8b0f8;
 }
 
-/* An entry in the store catalog */
+/* START:mainlayout */
+/* Styles for main page */
 
-#store  .entry {
+#banner {
+  background: #9c9;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  border-bottom: 2px solid;
+  font: small-caps 60px/60px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+}
+
+#banner img {
+  float: 		left;
+  width:        120px;
+  height:       70px;
+}
+
+#columns {
+  background: #141;
+}
+
+#main {
+  margin-left: 10em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 8em;
+  background: #141;
+}
+
+#side a {
+  color: #bfb;
+  font-size: medium;
+}
+/* END:mainlayout */
+
+/* An entry in the poster catalog */
+
+#poster  .entry {
   overflow: auto;
   margin-top: 1em;
   border-bottom: 1px dotted #77d;
 }
 
-#store  .title {
+#poster  .title {
   font-size: 120%;
   font-family: sans-serif;
 }
 
-#store .entry img {
-  width: 80px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+#poster .entry img {
+  width: 75px;
   float: left;
 }
 
 
-#store .entry h3 {
+#poster .entry h3 {
  margin-top: 0;
  margin-bottom: 2px;
  color: #227;
 }
 
-#store .entry p {
+#poster .entry p {
  margin-top: 0.5em; 
  margin-bottom: 0.8em; 
 }
 
-#store .entry .price_line {
+#poster .entry .price-line {
  clear: both;
- margin-bottom: 0.5em;
 }
 
-#store .entry .add_to_cart {
+#poster .entry .add-to-cart {
   position: relative;
 }
 
-#store .entry  .price {
+#poster .entry  .price {
   color: #44a;
   font-weight: bold;
   margin-right: 2em;
+}
+
+/* START:inline */
+#poster .entry form, #poster .entry form div {
+  display: inline;
+}
+/* END:inline */
+
+/* START:cartmain */
+/* Styles for the cart in the main page */
+
+.cart-title {
+  font: 120% bold;
+}
+
+.item-price, .total-line {
+  text-align: right;
+}
+
+.total-line .total-cell {
+  font-weight: bold;
+  border-top: 1px solid #595;
+}
+/* END:cartmain */
+
+/* START:cartside */
+/* Styles for the cart in the sidebar */
+
+#cart, #cart table {
+  font-size: smaller;
+  color:     white;
+}
+
+#cart table {
+  border-top:    1px dotted #595;
+  border-bottom: 1px dotted #595;
+  margin-bottom: 10px;
+}
+/* END:cartside */
+
+/* START:form */
+/* Styles for order form */
+
+.depot-form fieldset {
+  background: #efe;
+}
+
+.depot-form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.depot-form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+.depot-form select, .depot-form textarea, .depot-form input {
+  margin-left: 0.5em;
+}
+
+.depot-form .submit {
+  margin-left: 4em;
+}
+
+.depot-form div {
+  margin: 0.5em 0;
+}
+/* END:form */
+
+/* The error box */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: #EEFFEE;
+  display: inline;
+}
+
+.fieldWithErrors * {
+  background-color: red;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
 }

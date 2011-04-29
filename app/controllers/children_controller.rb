@@ -13,6 +13,7 @@ class ChildrenController < ApplicationController
   # GET /children/1
   # GET /children/1.xml
   def show
+    @children = Child.all
     @child = Child.find(params[:id])
 
     respond_to do |format|
@@ -34,7 +35,6 @@ class ChildrenController < ApplicationController
 
   # GET /children/1/edit
   def edit
-    @current_child = current_child
     @child = Child.find(params[:id])
   end
 

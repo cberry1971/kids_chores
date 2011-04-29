@@ -6,10 +6,13 @@ KidsChores::Application.routes.draw do
   get "pages/about"
 
   get "pages/help"
+  get "poster/index", :as => 'poster'
 
-  resources :children
-
+  resources :children do
+    resources :chores
+  end
   resources :chores
+  
   root :to => "pages#home", :as => 'home'
 
   # The priority is based upon order of creation:

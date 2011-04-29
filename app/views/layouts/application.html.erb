@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>KidsChores</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+  <head>
+    <title><%= @title || "Kid Chore Tracker" %></title>
+    <%= csrf_meta_tag %>
+	<%= stylesheet_link_tag 'scaffold' %>
+	<%= stylesheet_link_tag 'kids_chores', :media => "all" %>  
+  </head>
+  <body id="poster">
+	<div id="banner">
+		<%= image_tag("logo.gif") %>
+		<%= @page_title || "Kid Chore Tracker" %>
+	</div>
+	<div id="columns">
+	  <div id="side">
+		<%= link_to "Home", home_path %><br /><br/>
+		<% @children.each do |child| %>
+		    <%= link_to child.name, child_chores_path(:child_id => child.id) %><br /><br />
+		<% end %>
+	  </div>
+	  <div id="main">
+        <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
+      <%= debug(notice) if Rails.env.development? %>
+      <%= debug(session) if Rails.env.development? %>
 
-<%= yield %>
-
+      </div>
+	</div>
+  </div>
 </body>
 </html>

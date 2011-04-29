@@ -1,7 +1,11 @@
 class ChoresController < ApplicationController
+
+  # TODO add a before_filter to this controller to ensure only admins have access
+
   # GET /chores
   # GET /chores.xml
   def index
+    @child = Child.find_by_id(params[:child_id])
     @chores = Chore.all
     respond_to do |format|
       format.html # index.html.erb
