@@ -6,6 +6,10 @@ h1 {
         border-bottom: 3px dotted #77d;
 }
 
+#notice {
+  color: green;
+}
+
 /* Styles for chores/index */
 
 #chore-list table {

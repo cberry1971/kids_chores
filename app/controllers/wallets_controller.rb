@@ -41,12 +41,12 @@ class WalletsController < ApplicationController
   # POST /wallets.xml
   def create
     child_id = params[:child_id]
-    chore = Chore.find(params[:chore_id])
-    @wallet = Wallet.new(:chore => chore, :child_id => child_id)
+    chore_id = Chore.find(params[:chore_id])
+    @wallet = Wallet.new(:chore => chore_id, :child_id => child_id)
 
     respond_to do |format|
       if @wallet.save
-        format.html { redirect_to(@wallet, :notice => 'Chore was successfully added to your wallet.') }
+        format.html { redirect_to(@wallet.child, :notice => 'Chore was successfully added to your wallet.') }
         format.xml  { render :xml => @wallet, :status => :created, :location => @wallet }
       else
         format.html { render :action => "new" }
