@@ -23,7 +23,8 @@ h1 {
 }
 
 #chore-list .list-description {
-  width:        75%;
+  width:        55%;
+  padding-top:  20px;
 }
 
 #chore-list .list-description dl {
@@ -58,7 +59,13 @@ h1 {
   color: #44a;
   font-weight: bold;
   margin-right: 2em;
+  padding-top:  20px;
 }
+
+#chore-list .button {
+  padding-top:  2em;
+}
+
 /* START:mainlayout */
 /* Styles for main page */
 
@@ -101,6 +108,7 @@ h1 {
 #side a {
   color: #bfb;
   font-size: large;
+  padding-left: .5em;
 }
 /* END:mainlayout */
 

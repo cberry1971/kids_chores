@@ -27,26 +27,6 @@ ActiveRecord::Schema.define(:version => 20110429233907) do
     t.datetime "updated_at"
   end
 
-  create_table "completions", :force => true do |t|
-    t.integer  "child_id"
-    t.integer  "chore_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "kids", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "line_items", :force => true do |t|
-    t.integer  "chore_id"
-    t.integer  "kid_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "wallets", :force => true do |t|
     t.integer  "child_id",                          :null => false
     t.integer  "chore_id",                          :null => false

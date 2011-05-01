@@ -23,7 +23,7 @@
         </dl>
       </td>
 	 
-	  <td><%= button_to "Add to Wallet", wallets_path(:chore_id => chore, :child_id => session[:child_id]) %></td>
+	  <td class="button"><%= button_to "Add to Wallet", wallets_path(:chore_id => chore, :child_id => session[:child_id]) %></td>
 
       <td class="list-actions">
         <%= link_to 'Show', chore %><br/>
