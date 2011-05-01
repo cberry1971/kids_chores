@@ -1,4 +1,6 @@
 KidsChores::Application.routes.draw do
+  resources :wallets
+
   get "pages/home"
 
   get "pages/contact"
@@ -6,10 +8,10 @@ KidsChores::Application.routes.draw do
   get "pages/about"
 
   get "pages/help"
-  get "poster/index", :as => 'poster'
 
   resources :children do
     resources :chores
+    resources :wallets
   end
   resources :chores
   

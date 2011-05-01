@@ -3,7 +3,9 @@
 one:
   child_id: 1
   chore_id: 1
+  payment_status: false
 
 two:
   child_id: 1
   chore_id: 1
+  payment_status: false

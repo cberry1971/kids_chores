@@ -7,6 +7,8 @@ class ChoresController < ApplicationController
   def index
     @child = Child.find_by_id(params[:child_id])
     @chores = Chore.all
+    #@child = Child.find_by_id(params[:child_id])
+    #@chores = Chore.all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @chores }

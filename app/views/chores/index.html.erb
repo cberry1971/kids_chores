@@ -1,34 +1,42 @@
-	<div id="chore_list">
-	  <h1>List of Chores:</h1>
-	  <table>
-	  <% @chores.each do |chore| %>
-	    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<div id="chore-list">
+  <h1>Listing chores</h1>
 
-	      <td>
-	        <%= image_tag(chore.image_url, :class => 'list_image') %>
-	      </td>
+  <table>
+  <% @chores.each do |chore| %>
+    <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
 
-	      <td class="list_description">
-	        <dl>
-	          <dt><%= chore.title %></dt>
-	          <dd><%= truncate(strip_tags(chore.description),
-	                 :length => 180) %></dd>
-	        </dl>
-	      </td>
+      <td>
+        <%= image_tag chore.image_url, :class => 'list-image' %>
+      </td>
 
-	      <td class="list_actions">
+      <td class="list-description">
+        <dl>
+          <dt><%=h chore.title %></dt>
+          <dd><%=h truncate(chore.description.gsub(/<.*?>/,''),
+                 :length => 80) %></dd>
+        </dl>
+      </td>
 
-	        <%= link_to 'Show', chore %><br/>
-	        <%= link_to 'Edit', edit_chore_path(chore) %><br/>
-	        <%= link_to 'Remove', chore, 
-	                    :confirm => 'Are you sure?',
-	                    :method => :delete %>
-	      </td>
-	    </tr>
-	  <% end %>
-	  </table>
-	</div>
+	  <td class="value">
+        <dl>
+          <dt><%= number_to_currency(chore.value) %></dt>
+        </dl>
+      </td>
+	 
+	  <td><%= button_to "Add to Wallet", wallets_path(:chore_id => chore, :child_id => session[:child_id]) %></td>
 
-	<br />
+      <td class="list-actions">
+        <%= link_to 'Show', chore %><br/>
+        <%= link_to 'Edit', edit_chore_path(chore) %><br/>
+        <%= link_to 'Destroy', chore, 
+                    :confirm => 'Are you sure?',
+                    :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 
-	<%= link_to 'New chore', new_chore_path %>
+<br />
+
+<%= link_to 'New chore', new_chore_path %>

@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head>
-    <title><%= @title || "Kid Chore Tracker" %></title>
-    <%= csrf_meta_tag %>
-	<%= stylesheet_link_tag 'scaffold' %>
-	<%= stylesheet_link_tag 'kids_chores', :media => "all" %>  
-  </head>
-  <body id="poster">
-	<div id="banner">
-		<%= image_tag("logo.gif") %>
-		<%= @page_title || "Kid Chore Tracker" %>
-	</div>
-	<div id="columns">
-	  <div id="side">
+<head>
+  <title>Kid Chores Online</title>
+<!-- START:stylesheet -->
+  <%= stylesheet_link_tag "kids_chores", :media => "all" %><!-- <label id="code.slt"/> -->
+<!-- END:stylesheet -->
+</head>
+<body id="store">
+  <div id="banner">
+    <%= image_tag("logo.gif") %>
+    <%= @page_title || "Track Your Chores" %><!-- <label id="code.depot.e.title"/> -->
+  </div>
+  <div id="columns">
+    <div id="side">
 		<%= link_to "Home", home_path %><br /><br/>
 		<% @children.each do |child| %>
 		    <%= link_to child.name, child_chores_path(:child_id => child.id) %><br /><br />
@@ -20,11 +21,11 @@
 	  </div>
 	  <div id="main">
         <%= yield %>
+      </div>
       <%= debug(params) if Rails.env.development? %>
       <%= debug(notice) if Rails.env.development? %>
       <%= debug(session) if Rails.env.development? %>
 
-      </div>
 	</div>
   </div>
 </body>
