@@ -1,5 +1,5 @@
 class Chore < ActiveRecord::Base
-  has_many :wallet
+  has_many :wallets
   has_many :kids, :through => :wallet
   
   default_scope :order => 'title'

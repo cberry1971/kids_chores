@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110429233907) do
+ActiveRecord::Schema.define(:version => 20110501185340) do
 
   create_table "children", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110429233907) do
     t.boolean  "payment_status", :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity",       :default => 1
   end
 
 end

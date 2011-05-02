@@ -41,8 +41,9 @@ class WalletsController < ApplicationController
   # POST /wallets.xml
   def create
     child_id = params[:child_id]
-    chore_id = Chore.find(params[:chore_id])
-    @wallet = Wallet.new(:chore => chore_id, :child_id => child_id)
+    @child = Child.find(params[:child_id])
+    chore = Chore.find(params[:chore_id])
+    @wallet = @child.add_chore(chore.id)
 
     respond_to do |format|
       if @wallet.save

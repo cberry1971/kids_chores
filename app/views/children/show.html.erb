@@ -1,10 +1,23 @@
-<h2><%= "#{@child.name}'s Wallet" %></h2>
+<div class="wallet_title"><%= "#{@child.name}'s Wallet" %></div>
 
-	<ul>
-	<% @child.wallet.each do |item| %>
-		<li><%= item.chore.title %></li>
+	<table>
+	<% @child.wallets.each do |item| %>
+	  <tr>
+		<td><%= item.quantity %> &times;</td>
+		<td><%= item.chore.title %></td>
+		<td class="item_price"><%= number_to_currency(item.total_value) %></td>
+	  </tr>
 	<% end %>
-	</ul>
+	
+	
+	<tr class="total_line">
+		<td colspan="2">Total</td>
+		<td class="total_cell"><%= number_to_currency(@child.total_value) %></td>
+	</tr>
+	
+	</table>
+
+
 	
 <%= link_to 'Edit', edit_child_path(@child) %> |
 <%= link_to 'Back', children_path %>
