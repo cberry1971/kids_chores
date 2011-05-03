@@ -1,0 +1,11 @@
+<div class="wallet_title"><%= "#{child.name}'s Wallet" %></div>
+
+	<table>
+		<%= render(child.wallets) %>
+	
+	<tr class="total_line">
+		<td colspan="2">Total</td>
+		<td class="total_cell"><%= number_to_currency(child.total_value) %></td>
+	</tr>
+	
+	</table>

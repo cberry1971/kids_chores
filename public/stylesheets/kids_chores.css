@@ -12,6 +12,17 @@ h1 {
 
 /* Styles for chores/index */
 
+#home-page {
+        border-collapse: collapse;
+		font-size:    larger;
+		font-weight:  bold;
+	    vertical-align:  top;
+		padding: 		 2px;
+}
+#home-page .child {
+  	color: blue;
+}
+
 #chore-list table {
         border-collapse: collapse;
 }

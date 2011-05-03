@@ -18,7 +18,10 @@
 		<% @children.each do |child| %>
 		    <%= link_to child.name, child_chores_path(:child_id => child.id) %><br /><br />
 		<% end %>
+	  <div id="child">
+		<%= render @child %>
 	  </div>
+    </div>
 	  <div id="main">
         <div id="notice"><%= notice %></div>
 		<%= yield %>

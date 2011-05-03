@@ -1,10 +1,12 @@
-<% if notice%>
-<p id="notice"><%= notice %></p>
-<% end %>
 <h1>Kids Home Page</h1>
-
-<% @children.each do |child| %>
-	<div class="entry">
-    <%= link_to child.name, child_path(child.id) %>
-<% end %>
-	</div>
+<div id="home-page">
+  <table>
+  <% @children.each do |child| -%>
+<p>
+   <tr><%= child.name %></tr>
+   <tr><%= ":  " %> </tr>
+   <tr><%= number_to_currency(child.total_value) %></tr>
+</p>
+  <% end %>
+  </table>
+</div>
