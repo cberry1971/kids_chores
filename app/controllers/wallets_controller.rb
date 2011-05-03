@@ -40,7 +40,6 @@ class WalletsController < ApplicationController
   # POST /wallets
   # POST /wallets.xml
   def create
-    child_id = params[:child_id]
     @child = Child.find(params[:child_id])
     chore = Chore.find(params[:chore_id])
     @wallet = @child.add_chore(chore.id)

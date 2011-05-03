@@ -3,6 +3,7 @@ class Child < ActiveRecord::Base
   has_many :chores, :through => :wallet
   
   validates :name, :uniqueness => true
+  validates :name, :presence => true
 
   def to_param
     "#{id}-#{name}"
