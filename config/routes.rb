@@ -13,7 +13,7 @@ KidsChores::Application.routes.draw do
     resources :chores
     resources :wallets
   end
-  resources :chores
+  resources :chores, :controller => :chores
   
   root :to => "pages#home", :as => 'home'
 

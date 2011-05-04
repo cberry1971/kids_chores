@@ -161,7 +161,7 @@ h1 {
  clear: both;
 }
 
-#store .entry .add-to-cart {
+#store .entry .add-to-child {
   position: relative;
 }
 
@@ -219,10 +219,10 @@ h1 {
   list-style: square;
 }
 
-/* START:cartmain */
-/* Styles for the cart in the main page */
+/* START:childmain */
+/* Styles for the child in the main page */
 
-.wallet-title {
+.child-title {
   font: 120% bold;
 }
 
@@ -234,19 +234,19 @@ h1 {
   font-weight: bold;
   border-top: 1px solid #595;
 }
-/* END:cartmain */
+/* END:childmain */
 
-/* START:cartside */
-/* Styles for the cart in the sidebar */
+/* START:childside */
+/* Styles for the child in the sidebar */
 
-#cart, #cart table {
+#child, #child table {
   font-size: smaller;
   color:     white;
 }
 
-#cart table {
+#child table {
   border-top:    1px dotted #595;
   border-bottom: 1px dotted #595;
   margin-bottom: 10px;
 }
-/* END:cartside */
+/* END:childside */

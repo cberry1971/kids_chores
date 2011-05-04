@@ -46,7 +46,9 @@ class WalletsController < ApplicationController
 
     respond_to do |format|
       if @wallet.save
-        format.html { redirect_to(@wallet.child, :notice => 'Chore was successfully added to your wallet.') }
+        #TODO NEED to fix below to redirect to child_chores_path in order for AJAX to work
+        format.html { redirect_to (:back) } 
+        format.js
         format.xml  { render :xml => @wallet, :status => :created, :location => @wallet }
       else
         format.html { render :action => "new" }
