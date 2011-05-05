@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @child = Child.find(session[:child_id])
   end
 
   def contact

@@ -47,7 +47,7 @@ class WalletsController < ApplicationController
     respond_to do |format|
       if @wallet.save
         #TODO NEED to fix below to redirect to child_chores_path in order for AJAX to work
-        format.html { redirect_to (:back) } 
+        format.html { redirect_to (child_chores_path(@child)) } 
         format.js
         format.xml  { render :xml => @wallet, :status => :created, :location => @wallet }
       else

@@ -1,5 +1,4 @@
 class ChoresController < ApplicationController
-
   # TODO add a before_filter to this controller to ensure only admins have access
 
   # GET /chores
